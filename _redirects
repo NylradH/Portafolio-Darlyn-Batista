@@ -1,0 +1,5 @@
+# Cloudflare Pages Redirects
+# Format: from  to  status
+
+# SPA fallback for any future routes
+/*  /index.html  200

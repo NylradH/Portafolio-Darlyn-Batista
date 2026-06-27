@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Darlyn Miguel Batista Caraballo - Especialista en Seguridad Electrónica & Redes con IA. Videovigilancia inteligente, Control de Acceso biométrico, Alarmas predictivas, Redes definidas por software. Moca, Santiago, La Vega, Puerto Plata.">
+    <meta name="theme-color" content="#020617">
+    <meta property="og:title" content="DMB Seguridad | Seguridad Electrónica Inteligente con IA">
+    <meta property="og:description" content="El futuro de la seguridad ya está aquí. IA + CCTV + Control de Acceso + Redes. 150+ instalaciones. República Dominicana.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&h=630&fit=crop">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>DMB Seguridad | Seguridad Electrónica Inteligente con IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='32' y2='32'%3E%3Cstop offset='0' stop-color='%2306b6d4'/%3E%3Cstop offset='1' stop-color='%23a855f7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23g)'/%3E%3Cpath d='M8 16l6 6 10-10' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- WebGL Background Canvas -->
+    <canvas id="webgl-bg" aria-hidden="true"></canvas>
+    
+    <!-- Noise Overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" aria-label="DMB Seguridad - Inicio">
+                <span class="logo-mark" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" width="32" height="32">
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="32" y2="32">
+                                <stop offset="0%" stop-color="#06b6d4"/>
+                                <stop offset="50%" stop-color="#3b82f6"/>
+                                <stop offset="100%" stop-color="#a855f7"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="32" height="32" rx="8" fill="url(#logoGrad)"/>
+                        <path d="M8 16l6 6 10-10" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="logo-text">
+                    <span class="logo-main">DMB</span>
+                    <span class="logo-sub">Seguridad</span>
+                </span>
+            </a>
+            
+            <div class="nav-links-wrapper">
+                <ul class="nav-links" id="navLinks" role="menubar">
+                    <li role="none"><a href="#inicio" class="nav-link" role="menuitem" data-text="Inicio">Inicio</a></li>
+                    <li role="none"><a href="#servicios" class="nav-link" role="menuitem" data-text="Servicios">Servicios</a></li>
+                    <li role="none"><a href="#ia" class="nav-link" role="menuitem" data-text="IA">IA</a></li>
+                    <li role="none"><a href="#proyectos" class="nav-link" role="menuitem" data-text="Proyectos">Proyectos</a></li>
+                    <li role="none"><a href="#sobre-mi" class="nav-link" role="menuitem" data-text="Sobre mí">Sobre mí</a></li>
+                </ul>
+                <a href="#contacto" class="nav-cta" role="button">
+                    <span>Contactar</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                        <polyline points="17 8 12 3 7 8"/>
+                        <line x1="12" y1="3" x2="12" y2="15"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+                <span class="hamburger" aria-hidden="true"></span>
+            </button>
+        </div>
+        
+        <!-- Nav Progress Bar -->
+        <div class="nav-progress" id="navProgress" aria-hidden="true"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg-layers" aria-hidden="true">
+            <div class="hero-gradient-mesh"></div>
+            <div class="hero-grid"></div>
+            <div class="hero-orbs"></div>
+        </div>
+        
+        <div class="hero-content container">
+            <!-- AI Badge -->
+            <div class="hero-badge" aria-live="polite">
+                <div class="badge-indicator">
+                    <span class="pulse-ring"></span>
+                    <span class="pulse-dot"></span>
+                </div>
+                <span class="badge-text">
+                    <span class="ai-tag">IA</span>
+                    <span>Seguridad predictiva · Automatización total · Decisiones en milisegundos</span>
+                </span>
+            </div>
+            
+            <h1 id="hero-title" class="hero-title">
+                <span class="title-line title-line-1">Seguridad que</span>
+                <span class="title-line title-line-2"><span class="gradient-text">piensa</span> por ti</span>
+                <span class="title-line title-line-3"><span class="gradient-text">actúa</span> antes</span>
+            </h1>
+            
+            <p class="hero-tagline">
+                La <strong>inteligencia artificial</strong> ya no es opcional. Es el motor que transforma cámaras en analistas, accesos en identidades, alarmas en predicciones y redes en sistemas autónomos.
+            </p>
+            
+            <!-- Live Stats Bar -->
+            <div class="hero-live-stats" role="list" aria-label="Métricas en tiempo real">
+                <div class="live-stat" role="listitem">
+                    <div class="live-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <div class="live-stat-data">
+                        <span class="live-stat-value" data-target="247" data-suffix="+">0</span>
+                        <span class="live-stat-label">Cámaras IA activas</span>
+                    </div>
+                </div>
+                <div class="live-stat-divider" aria-hidden="true"></div>
+                <div class="live-stat" role="listitem">
+                    <div class="live-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="live-stat-data">
+                        <span class="live-stat-value" data-target="99.8" data-suffix="%">0</span>
+                        <span class="live-stat-label">Precisión detección</span>
+                    </div>
+                </div>
+                <div class="live-stat-divider" aria-hidden="true"></div>
+                <div class="live-stat" role="listitem">
+                    <div class="live-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    </div>
+                    <div class="live-stat-data">
+                        <span class="live-stat-value" data-target="50" data-suffix="ms">0</span>
+                        <span class="live-stat-label">Latencia respuesta</span>
+                    </div>
+                </div>
+                <div class="live-stat-divider" aria-hidden="true"></div>
+                <div class="live-stat" role="listitem">
+                    <div class="live-stat-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <div class="live-stat-data">
+                        <span class="live-stat-value" data-target="4" data-suffix="">0</span>
+                        <span class="live-stat-label">Provincias RD</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-actions">
+                <a href="#contacto" class="btn btn-primary">
+                    <span>Iniciar proyecto con IA</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#ia" class="btn btn-secondary">
+                    <span>Ver cómo funciona la IA</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="hero-trust">
+                <span class="trust-label">Con la confianza de</span>
+                <div class="trust-logos" id="heroTrustLogos" aria-label="Clientes destacados"></div>
+            </div>
+            
+            <div class="hero-scroll" id="scrollDown" aria-label="Explorar servicios">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M12 5v14M19 12l-7 7-7-7"/>
+                </svg>
+                <span>Descubrir</span>
+            </div>
+        </div>
+        
+        <!-- Floating AI Orb -->
+        <div class="floating-ai-orb" id="floatingAiOrb" aria-hidden="true">
+            <div class="orb-core"></div>
+            <div class="orb-ring"></div>
+            <div class="orb-ring orb-ring-2"></div>
+            <div class="orb-particles"></div>
+        </div>
+    </section>
+
+    <!-- AI Section - THE CENTERPIECE -->
+    <section id="ia" class="ai-section" aria-labelledby="ai-title">
+        <div class="ai-bg" aria-hidden="true">
+            <div class="ai-grid"></div>
+            <div class="ai-neural-path"></div>
+        </div>
+        
+        <div class="container">
+            <header class="section-header">
+                <span class="section-tag">NÚCLEO</span>
+                <h2 id="ai-title" class="section-title">La <span class="gradient-text">Inteligencia Artificial</span> es el motor</h2>
+                <p class="section-subtitle">No instalamos cámaras. Instalamos <strong>cerebros digitales</strong> que ven, analizan, deciden y actúan en tiempo real.</p>
+            </header>
+            
+            <!-- AI Visualization -->
+            <div class="ai-visualization" id="aiVisualization" aria-label="Visualización de pipeline de IA">
+                <div class="ai-pipeline">
+                    <div class="pipeline-stage" data-stage="1">
+                        <div class="stage-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <div class="stage-content">
+                            <span class="stage-number">01</span>
+                            <h3>Captura Inteligente</h3>
+                            <p>Cámaras 4K/8K con ISP IA embebido. Detección de rostros, placas, objetos, poses, anomalías — <strong>en el edge</strong>, sin latencia de nube.</p>
+                        </div>
+                        <div class="stage-tech">TensorRT · ONNX · Edge TPU</div>
+                    </div>
+                    
+                    <div class="pipeline-connector" aria-hidden="true">
+                        <svg viewBox="0 0 40 60" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 0V30M20 30L8 45M20 30L32 45"/></svg>
+                    </div>
+                    
+                    <div class="pipeline-stage center-stage" data-stage="2">
+                        <div class="stage-icon large">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M12 16v.01"/></svg>
+                        </div>
+                        <div class="stage-content">
+                            <span class="stage-number">02</span>
+                            <h3>Motor de Inferencia</h3>
+                            <p>NVIDIA Jetson / Orin / Xavier + modelos YOLOv8, RT-DETR, SAM 2.0. <strong>200+ TOPS</strong> para multi-stream 4K simultáneo. Entrenamiento continuo (MLOps).</p>
+                        </div>
+                        <div class="stage-tech">CUDA · TensorRT · Triton · MLflow</div>
+                        <div class="stage-metrics">
+                            <span><strong>99.8%</strong> mAP</span>
+                            <span><strong><50ms</strong> latencia</span>
+                            <span><strong>32</strong> streams/device</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pipeline-connector" aria-hidden="true">
+                        <svg viewBox="0 0 40 60" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 30V60M20 30L8 45M20 30L32 45"/></svg>
+                    </div>
+                    
+                    <div class="pipeline-stage" data-stage="3">
+                        <div class="stage-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <div class="stage-content">
+                            <span class="stage-number">03</span>
+                            <h3>Acción Autónoma</h3>
+                            <p>Alertas contextuales, apertura predictiva, bloqueo automático, re-encaminamiento de tráfico, auto-healing de red. <strong>Cero intervención humana</strong> para eventos conocidos.</p>
+                        </div>
+                        <div class="stage-tech">Webhooks · MQTT · API REST · SIP</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI Capabilities Grid -->
+            <div class="ai-capabilities" role="list" aria-label="Capacidades de IA">
+                <article class="ai-capability" role="listitem">
+                    <div class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h4>Reconocimiento Facial + Palma</h4>
+                    <p>Identificación 1:N en <200ms. Anti-spoofing liveness detection. Funciona con mascarilla, gafas, cambios de look. GDPR-compliant.</p>
+                    <span class="cap-tag">Control Acceso</span>
+                </article>
+                <article class="ai-capability" role="listitem">
+                    <div class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                    </div>
+                    <h4>ANPR / LPR Avanzado</h4>
+                    <p>Lectura placas 99.7% precisión. Multi-país, motos, remolques. Lista blanca/negra, velocidad, dirección, color, marca/modelo via MMC.</p>
+                    <span class="cap-tag">Vehicular</span>
+                </article>
+                <article class="ai-capability" role="listitem">
+                    <div class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h4>Detección Anomalías Comportamiento</h4>
+                    <p>Merodeo, caídas, peleas, aglomeraciones, objeto abandonado, intrusión perimetral, tailgating. Reglas personalizables por zona/horario.</p>
+                    <span class="cap-tag">Videovigilancia</span>
+                </article>
+                <article class="ai-capability" role="listitem">
+                    <div class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><rect x="1" y="1" width="22" height="22" rx="2"/><path d="M7 11h10"/><path d="M7 16h10"/><path d="M12 7v10"/></svg>
+                    </div>
+                    <h4>Redes Auto-Gestionadas (AIOps)</h4>
+                    <p>QoS adaptativo, failover predictivo, detección intrusión red, bandwidth shaping por IA, auto-configuración VLANs, self-healing PoE.</p>
+                    <span class="cap-tag">Redes</span>
+                </article>
+                <article class="ai-capability" role="listitem">
+                    <div class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+                    </div>
+                    <h4>Alarm Predictiva</h4>
+                    <p>Correlación multi-sensor + IA. Falsa alarma <0.1%. Predicción de fallo hardware (discos, fuentes, cámaras) 72h antes. Mantenimiento predictivo real.</p>
+                    <span class="cap-tag">Alarmas</span>
+                </article>
+                <article class="ai-capability" role="listitem">
+                    <div class="cap-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                    </div>
+                    <h4>Gemelo Digital de Seguridad</h4>
+                    <p>Réplica virtual 3D de tu instalación. Simulación de amenazas, entrenamiento de modelos, planificación de expansión, auditoría visual remota.</p>
+                    <span class="cap-tag">Plataforma</span>
+                </article>
+            </div>
+            
+            <!-- AI CTA -->
+            <div class="ai-cta">
+                <div class="ai-cta-content">
+                    <h3>¿Listo para seguridad que piensa?</h3>
+                    <p>La IA no reemplaza tu criterio. Lo amplifica. Hablemos de cómo integrar inteligencia real en tu operación.</p>
+                </div>
+                <a href="#contacto" class="btn btn-primary btn-lg">
+                    <span>Diseñar mi solución IA</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services" aria-labelledby="services-title">
+        <div class="services-bg" aria-hidden="true">
+            <div class="services-grid-bg"></div>
+        </div>
+        
+        <div class="container">
+            <header class="section-header">
+                <span class="section-tag">MÓDULOS</span>
+                <h2 id="services-title" class="section-title">Servicios <span class="gradient-text">potenciados por IA</span></h2>
+                <p class="section-subtitle">Cada servicio incluye motor de inferencia, app móvil con alertas IA, dashboard analítico y entrenamiento de modelos para tu caso de uso.</p>
+            </header>
+            
+            <div class="services-grid" id="servicesGrid" role="list">
+                <!-- Rendered by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects" aria-labelledby="projects-title">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-tag">CASOS REALES</span>
+                <h2 id="projects-title" class="section-title">Proyectos donde la <span class="gradient-text">IA marcó la diferencia</span></h2>
+                <p class="section-subtitle">No son instalaciones. Son implementaciones de inteligencia operativa. Resultados medibles, clientes reales.</p>
+            </header>
+            
+            <div class="projects-grid" id="projectsGrid" role="list">
+                <!-- Rendered by JS -->
+            </div>
+            
+            <div class="projects-cta">
+                <a href="#contacto" class="btn btn-secondary btn-lg">
+                    <span>Quiero un caso como estos</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="about" aria-labelledby="about-title">
+        <div class="about-bg" aria-hidden="true">
+            <div class="about-mesh"></div>
+        </div>
+        
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <header class="section-header section-header--left">
+                        <span class="section-tag">PERFIL</span>
+                        <h2 id="about-title" class="section-title">El técnico que <span class="gradient-text">entrena modelos</span></h2>
+                    </header>
+                    
+                    <div class="about-text">
+                        <p>Técnico especialista en <strong>videovigilancia IP/analógica</strong>, <strong>control de acceso biométrico</strong>, <strong>alarmas predictivas</strong> y <strong>redes definidas por software</strong> (SD-WAN, VXLAN, SRv6, cableado Cat6a/Fibra certificado Fluke).</p>
+                        <p>Operando desde <strong>Moca, Espaillat</strong> con cobertura en Santiago, La Vega, Puerto Plata. Más de 8 años resolviendo instalaciones que otros dejaron a medias — y los últimos 3 integrando <strong>IA en el edge</strong> para que la seguridad deje de ser reactiva.</p>
+                        <p class="highlight">Mi regla: <em>"Si ta ta, si no está, no está. Si tú no lo estás viendo ahí, es porque no está."</em> — Ahora la IA lo ve todo, lo analiza todo, y actúa antes de que tú lo notes.</p>
+                    </div>
+                    
+                    <div class="about-tech-stack">
+                        <h3>Stack Tecnológico</h3>
+                        <div class="tech-categories">
+                            <div class="tech-category">
+                                <span class="tech-cat-label">IA / Edge</span>
+                                <div class="tech-chips" id="aiSkills"></div>
+                            </div>
+                            <div class="tech-category">
+                                <span class="tech-cat-label">Hardware</span>
+                                <div class="tech-chips" id="hwSkills"></div>
+                            </div>
+                            <div class="tech-category">
+                                <span class="tech-cat-label">Redes / Infra</span>
+                                <div class="tech-chips" id="netSkills"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-stats" role="list" aria-label="Métricas profesionales">
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" data-target="150">0</span>
+                            <span class="stat-suffix">+</span>
+                            <span class="stat-desc">Instalaciones IA-ready</span>
+                        </div>
+                    </div>
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" data-target="8">0</span>
+                            <span class="stat-suffix">+</span>
+                            <span class="stat-desc">Años experiencia</span>
+                        </div>
+                    </div>
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" data-target="50">0</span>
+                            <span class="stat-suffix">ms</span>
+                            <span class="stat-desc">Latencia inferencia</span>
+                        </div>
+                    </div>
+                    <div class="stat-card" role="listitem">
+                        <div class="stat-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-value" data-target="99.8">0</span>
+                            <span class="stat-suffix">%</span>
+                            <span class="stat-desc">Precisión modelos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Marquee -->
+    <section class="clients" aria-labelledby="clients-title">
+        <div class="container">
+            <h2 id="clients-title" class="sr-only">Organizaciones que operan con IA</h2>
+            <div class="clients-marquee" aria-hidden="true">
+                <div class="clients-track" id="clientsTrack"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact" aria-labelledby="contact-title">
+        <div class="contact-bg" aria-hidden="true">
+            <div class="contact-gradient"></div>
+            <div class="contact-grid-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <header class="section-header section-header--left">
+                        <span class="section-tag">CONEXIÓN</span>
+                        <h2 id="contact-title" class="section-title">Conectemos tu operación con <span class="gradient-text">inteligencia real</span></h2>
+                        <p class="section-subtitle">Sin formularios eternos. Sin llamadas de venta. Una conversación técnica directa: tú me dices tu problema, yo te diseño la solución con IA.</p>
+                    </header>
+                    
+                    <div class="contact-methods">
+                        <a href="https://wa.me/18492090080" target="_blank" rel="noopener" class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="24" height="24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">WhatsApp Directo</span>
+                                <span class="method-value">849-209-0080</span>
+                                <span class="method-note">Respuesta <strong><5 min</strong> horario laboral</span>
+                            </div>
+                        </a>
+                        <a href="mailto:darlynmbc@gmail.com" class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Email Técnico</span>
+                                <span class="method-value">darlynmbc@gmail.com</span>
+                                <span class="method-note">Para documentación, planos, specs</span>
+                            </div>
+                        </a>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Base de Operaciones</span>
+                                <span class="method-value">Moca, Espaillat, RD</span>
+                                <span class="method-note">Cobertura: Santiago · La Vega · Puerto Plata</span>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            </div>
+                            <div class="method-content">
+                                <span class="method-label">Horario IA</span>
+                                <span class="method-value">Lun-Sáb 7:00-18:00</span>
+                                <span class="method-note">Monitoreo IA: <strong>24/7/365</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-header">
+                        <div class="form-ai-indicator" aria-hidden="true">
+                            <span class="ai-dot"></span>
+                            <span>Formulario inteligente</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Nombre completo *</label>
+                        <input type="text" id="name" name="name" required autocomplete="name" placeholder="Darlyn Miguel Batista Caraballo">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">WhatsApp o Email *</label>
+                        <input type="text" id="contact" name="contact" required autocomplete="tel" placeholder="849-XXX-XXXX o tu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Módulo de interés *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecciona el módulo IA</option>
+                            <option value="cctv-ia">🎥 Videovigilancia IA (CCTV/IP/NVR + Analytics)</option>
+                            <option value="acceso-ia">🚪 Control Acceso Biométrico + IA</option>
+                            <option value="alarmas-ia">🛡️ Alarmas Predictivas + Correlación IA</option>
+                            <option value="redes-ia">🌐 Redes SD-WAN / AIOps / Auto-Healing</option>
+                            <option value="plataforma">🧠 Plataforma Completa (Gemelo Digital + MLOps)</option>
+                            <option value="mantenimiento">🔧 Mantenimiento Predictivo IA</option>
+                            <option value="otro">💡 Otro / Asesoría técnica</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Describe tu operación / problema *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Ej: 'Tengo 3 bodegas en Santiago, necesito detectar intrusión perimetral, lectura de placas en acceso vehicular, y que todo se vea en una sola app. Actualmente tengo 12 cámaras analógicas antiguas.'"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full btn-lg">
+                        <span class="btn-text">Enviar a WhatsApp con IA</span>
+                        <span class="btn-loading" aria-hidden="true">
+                            <svg class="spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="24"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0110 10" stroke-linecap="round"/></svg>
+                            Generando contexto...
+                        </span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true" class="btn-arrow">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <p class="form-note">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        Tu mensaje llega pre-formateado con contexto técnico. Solo dale a enviar.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-bg" aria-hidden="true"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="footer-logo" aria-label="DMB Seguridad - Inicio">
+                        <span class="logo-mark" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" width="32" height="32">
+                                <defs><linearGradient id="logoGradF" x1="0" y1="0" x2="32" y2="32"><stop offset="0%" stop-color="#06b6d4"/><stop offset="50%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#a855f7"/></linearGradient></defs>
+                                <rect width="32" height="32" rx="8" fill="url(#logoGradF)"/>
+                                <path d="M8 16l6 6 10-10" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                        <span class="logo-text">
+                            <span class="logo-main">DMB</span>
+                            <span class="logo-sub">Seguridad</span>
+                        </span>
+                    </a>
+                    <p class="footer-tagline">Seguridad electrónica inteligente. <span class="gradient-text">IA en el edge.</span> Instalación limpia, modelos entrenados, decisiones en milisegundos.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/18492090080" target="_blank" rel="noopener" aria-label="WhatsApp">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                        </a>
+                        <a href="mailto:darlynmbc@gmail.com" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </a>
+                    </div>
+                    <div class="footer-ai-badge">
+                        <span class="ai-badge-dot"></span>
+                        <span>Powered by <strong>Edge AI</strong> · NVIDIA Jetson · TensorRT · YOLOv8 · SAM 2.0</span>
+                    </div>
+                </div>
+                <nav class="footer-nav" aria-label="Servicios">
+                    <h4>Módulos IA</h4>
+                    <ul>
+                        <li><a href="#servicios">Videovigilancia IA</a></li>
+                        <li><a href="#servicios">Control Acceso IA</a></li>
+                        <li><a href="#servicios">Alarmas Predictivas</a></li>
+                        <li><a href="#servicios">Redes AIOps</a></li>
+                        <li><a href="#servicios">Plataforma Unificada</a></li>
+                    </ul>
+                </nav>
+                <nav class="footer-nav" aria-label="Empresa">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#ia">Cómo funciona la IA</a></li>
+                        <li><a href="#proyectos">Casos reales</a></li>
+                        <li><a href="#sobre-mi">Perfil técnico</a></li>
+                        <li><a href="#contacto">Contacto directo</a></li>
+                    </ul>
+                </nav>
+                <div class="footer-contact">
+                    <h4>Cobertura RD</h4>
+                    <ul>
+                        <li>Moca, Espaillat (Base)</li>
+                        <li>Santiago de los Caballeros</li>
+                        <li>La Vega</li>
+                        <li>Puerto Plata</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Darlyn Miguel Batista Caraballo. Ingeniería de seguridad con IA.</p>
+                <p class="tech-badge">
+                    <span class="badge-item">Desplegado en Cloudflare Pages</span>
+                    <span class="badge-item">Edge Network Global</span>
+                    <span class="badge-item">HTML/CSS/JS Vanilla · Zero Framework</span>
+                    <span class="badge-item"><a href="#contacto">Conversemos</a></span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/18492090080" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat por WhatsApp" title="Iniciar proyecto con IA">
+        <div class="wa-bg" aria-hidden="true"></div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" width="28" height="28" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <span class="whatsapp-tooltip">WhatsApp IA</span>
+        <div class="wa-pulse" aria-hidden="true"></div>
+    </a>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script src="webgl-bg.js"></script>
+</body>
+</html>
