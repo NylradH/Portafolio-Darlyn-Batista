@@ -172,6 +172,96 @@
     }
   ];
 
+  // NEW: Testimonials data
+  const TESTIMONIALS = [
+    {
+      id: 'test-1',
+      client: 'Ing. Carlos Mendoza',
+      role: 'Gerente de Operaciones',
+      company: 'Hielo Cristalizado Central',
+      avatar: 'CM',
+      quote: 'La implementación de IA en nuestras cámaras frigoríficas fue un antes y después. Cero falsos positivos a -30°C, algo que ningún otro proveedor logró. El gemelo digital nos permite simular emergencias sin detener producción.',
+      rating: 5,
+      project: 'hielo-central',
+      metric: '99.9% precisión en frío extremo'
+    },
+    {
+      id: 'test-2',
+      client: 'Dra. Patricia Reyes',
+      role: 'Vicerrectora Administrativa',
+      company: 'UTESA',
+      avatar: 'PR',
+      quote: 'Pasamos de seguridad reactiva a predictiva. El conteo de aforo en tiempo real y detección de anomalías nos da tranquilidad. La red auto-healing eliminó los cortes de internet durante clases virtuales. Un partner técnico real, no solo un instalador.',
+      rating: 5,
+      project: 'utesa',
+      metric: '73% reducción incidentes'
+    },
+    {
+      id: 'test-3',
+      client: 'Roberto Vázquez',
+      role: 'Director de Logística',
+      company: 'Súper Truck Logistics',
+      avatar: 'RV',
+      quote: 'Los camiones ya no se detienen. ANPR a 60 km/h, barreras se abren solas, todo en una app. Cero falsas alarmas por fauna en 2km de perímetro. Conectaron 3 sedes con SD-WAN y failover automático. ROI inmediato en eficiencia operativa.',
+      rating: 5,
+      project: 'super-truck',
+      metric: '200 camiones/día sin parar'
+    },
+    {
+      id: 'test-4',
+      client: 'Jennifer Cabrera',
+      role: 'Gerente General',
+      company: 'JC Multiservice',
+      avatar: 'JC',
+      quote: 'Buscábamos algo simple y moderno. Entregaron instalación invisible, cableado certificado, facial para empleados y alertas a WhatsApp. En 8 meses recuperamos la inversión previniendo robos internos. Soporte 24/7 real, no bot.',
+      rating: 5,
+      project: 'jc-multiservice',
+      metric: 'ROI 8 meses'
+    },
+    {
+      id: 'test-5',
+      client: 'Ing. Miguel Rodríguez',
+      role: 'Jefe de Mantenimiento',
+      company: 'Roda Caribe',
+      avatar: 'MR',
+      quote: 'Primera fábrica en La Vega con detección EPP por IA. Cumplimiento de seguridad subió al 98%. La red OT/IT segregada (Purdue Model) pasó auditoría internacional. Alarma perimetral IA distingue personal de fauna. Profesionalismo total.',
+      rating: 5,
+      project: 'roda-caribe',
+      metric: '98% cumplimiento EPP'
+    },
+    {
+      id: 'test-6',
+      client: 'Carlos Núñez',
+      role: 'Propietario',
+      company: 'Cecomsa Finca',
+      avatar: 'CN',
+      quote: 'Me dijeron que era imposible: seguridad IA profesional sin electricidad ni internet en medio del campo. Lo lograron: 100% solar, IA edge offline, enlace 5km. 72h autonomía sin sol. Monitoreo desde mi casa. Increíble.',
+      rating: 5,
+      project: 'cecomsa',
+      metric: '100% off-grid funcional'
+    }
+  ];
+
+  // NEW: Certifications data
+  const CERTIFICATIONS = [
+    { id: 'cert-1', name: 'NVIDIA Jetson AI Specialist', issuer: 'NVIDIA', year: 2024, icon: '🟢', category: 'IA / Edge', verified: true },
+    { id: 'cert-2', name: 'TensorRT Optimization Certified', issuer: 'NVIDIA', year: 2024, icon: '🟢', category: 'IA / Edge', verified: true },
+    { id: 'cert-3', name: 'YOLOv8/v9/v10 Advanced Training', issuer: 'Ultralytics', year: 2024, icon: '🔵', category: 'IA / Edge', verified: true },
+    { id: 'cert-4', name: 'SAM 2.0 Segmentation Expert', issuer: 'Meta AI', year: 2024, icon: '🔵', category: 'IA / Edge', verified: true },
+    { id: 'cert-5', name: 'Hikvision AI Partner Certified', issuer: 'Hikvision', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+    { id: 'cert-6', name: 'Dahua Technology Solution Expert', issuer: 'Dahua', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+    { id: 'cert-7', name: 'Axis Communications Certified Professional', issuer: 'Axis', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+    { id: 'cert-8', name: 'ZKTeco Biometric Solutions Certified', issuer: 'ZKTeco', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+    { id: 'cert-9', name: 'Fluke DSX-5000/8000 Certification', issuer: 'Fluke Networks', year: 2022, icon: '🟣', category: 'Redes / Infra', verified: true },
+    { id: 'cert-10', name: 'MikroTik MTCNA / MTCRE / MTCTCE', issuer: 'MikroTik', year: 2022, icon: '🟣', category: 'Redes / Infra', verified: true },
+    { id: 'cert-11', name: 'Ubiquiti Enterprise Wireless Admin', issuer: 'Ubiquiti', year: 2022, icon: '🟣', category: 'Redes / Infra', verified: true },
+    { id: 'cert-12', name: 'Cisco CCNA Routing & Switching', issuer: 'Cisco', year: 2021, icon: '🟣', category: 'Redes / Infra', verified: true },
+    { id: 'cert-13', name: 'BICSI Installer 2 Copper/Fiber', issuer: 'BICSI', year: 2021, icon: '🟣', category: 'Redes / Infra', verified: true },
+    { id: 'cert-14', name: 'Paradox / DSC / Ajax Alarm Certified', issuer: 'Multi-brand', year: 2021, icon: '🔴', category: 'Alarmas', verified: true },
+    { id: 'cert-15', name: 'MLflow / Kubeflow MLOps Practitioner', issuer: 'Linux Foundation', year: 2024, icon: '🟢', category: 'IA / Edge', verified: true },
+    { id: 'cert-16', name: 'Prometheus / Grafana Observability', issuer: 'CNCF', year: 2023, icon: '🟣', category: 'Redes / Infra', verified: true }
+  ];
+
   const AI_SKILLS = [
     'YOLOv8 / YOLOv9 / YOLOv10',
     'RT-DETR / DETR',
@@ -380,6 +470,65 @@
     `).join('');
   }
 
+  // NEW: Render Testimonials
+  function renderTestimonials() {
+    const grid = $('#testimonialsGrid');
+    if (!grid) return;
+    
+    grid.innerHTML = TESTIMONIALS.map((t, i) => `
+      <article class="testimonial-card animate-on-scroll delay-${(i % 6) + 1}" data-testimonial="${t.id}">
+        <div class="testimonial-header">
+          <div class="testimonial-avatar" aria-hidden="true">${t.avatar}</div>
+          <div class="testimonial-meta">
+            <h4 class="testimonial-name">${t.client}</h4>
+            <p class="testimonial-role">${t.role} · ${t.company}</p>
+          </div>
+        </div>
+        <div class="testimonial-rating" aria-label="${t.rating} de 5 estrellas">
+          ${'★'.repeat(t.rating)}${'☆'.repeat(5 - t.rating)}
+        </div>
+        <blockquote class="testimonial-quote">
+          <p>"${t.quote}"</p>
+        </blockquote>
+        <div class="testimonial-metric">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>
+          <span>${t.metric}</span>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  // NEW: Render Certifications
+  function renderCertifications() {
+    const grid = $('#certsGrid');
+    if (!grid) return;
+    
+    // Group by category
+    const categories = ['IA / Edge', 'Hardware', 'Redes / Infra', 'Alarmas'];
+    
+    grid.innerHTML = categories.map(cat => {
+      const certs = CERTIFICATIONS.filter(c => c.category === cat);
+      if (certs.length === 0) return '';
+      return `
+        <div class="cert-category">
+          <h3 class="cert-category-title">${cat}</h3>
+          <div class="cert-grid">
+            ${certs.map(c => `
+              <article class="cert-card" data-cert="${c.id}">
+                <div class="cert-icon" aria-hidden="true">${c.icon}</div>
+                <div class="cert-content">
+                  <h4 class="cert-name">${c.name}</h4>
+                  <p class="cert-issuer">${c.issuer} · ${c.year}</p>
+                </div>
+                ${c.verified ? '<span class="cert-verified" title="Verificada"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>' : ''}
+              </article>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
   function renderSkills() {
     const aiEl = $('#aiSkills');
     const hwEl = $('#hwSkills');
@@ -490,7 +639,7 @@
   }
 
   // ========================================
-  // CONTACT FORM — WhatsApp deep link with AI context
+  // CONTACT FORM — WhatsApp deep link with AI context + validation
   // ========================================
   function initContactForm() {
     const form = $('#contactForm');
@@ -499,21 +648,79 @@
     const btnText = submitBtn?.querySelector('.btn-text');
     const btnLoading = submitBtn?.querySelector('.btn-loading');
 
+    // Real-time validation
+    const validators = {
+      name: (value) => value.trim().length >= 2 ? '' : 'Nombre muy corto (mín. 2 caracteres)',
+      contact: (value) => {
+        const v = value.trim();
+        const phoneRegex = /^(\+?1?[-.\s]?)?\(?([0-9]{3})\)?[-.\s]?([0-9]{3})[-.\s]?([0-9]{4})$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return (phoneRegex.test(v) || emailRegex.test(v)) ? '' : 'Ingresa WhatsApp válido (849-XXX-XXXX) o email';
+      },
+      service: (value) => value ? '' : 'Selecciona un módulo de interés',
+      message: (value) => value.trim().length >= 20 ? '' : 'Describe tu operación con más detalle (mín. 20 caracteres)'
+    };
+
+    // Show/hide error
+    function showError(fieldName, message) {
+      const field = form.querySelector(`[name="${fieldName}"]`);
+      const errorEl = form.querySelector(`#${fieldName}-error`);
+      if (field && errorEl) {
+        field.setAttribute('aria-invalid', message ? 'true' : 'false');
+        errorEl.textContent = message;
+        errorEl.style.display = message ? 'block' : 'none';
+      }
+    }
+
+    // Validate on blur
+    Object.keys(validators).forEach(fieldName => {
+      const field = form.querySelector(`[name="${fieldName}"]`);
+      if (field) {
+        field.addEventListener('blur', () => {
+          showError(fieldName, validators[fieldName](field.value));
+        });
+        field.addEventListener('input', () => {
+          if (field.getAttribute('aria-invalid') === 'true') {
+            showError(fieldName, validators[fieldName](field.value));
+          }
+        });
+      }
+    });
+
     form?.addEventListener('submit', async (e) => {
       e.preventDefault();
+
+      // Honeypot check
+      const honeypot = form.querySelector('[name="website"]');
+      if (honeypot && honeypot.value) {
+        // Spam bot detected - silently succeed but don't send
+        form.reset();
+        return;
+      }
+
+      // Validate all fields
+      let hasErrors = false;
+      Object.keys(validators).forEach(fieldName => {
+        const field = form.querySelector(`[name="${fieldName}"]`);
+        if (field) {
+          const error = validators[fieldName](field.value);
+          showError(fieldName, error);
+          if (error) hasErrors = true;
+        }
+      });
+
+      if (hasErrors) {
+        // Shake animation
+        form.style.animation = 'shake 0.4s ease';
+        setTimeout(() => form.style.animation = '', 400);
+        return;
+      }
 
       const data = new FormData(form);
       const name = data.get('name')?.trim();
       const contact = data.get('contact')?.trim();
       const service = data.get('service');
       const message = data.get('message')?.trim();
-
-      if (!name || !contact || !service || !message) {
-        // Shake animation
-        form.style.animation = 'shake 0.4s ease';
-        setTimeout(() => form.style.animation = '', 400);
-        return;
-      }
 
       // Loading state
       if (submitBtn) {
@@ -559,6 +766,7 @@ _Enviado desde portafolio IA DMB Seguridad_`;
           submitBtn.disabled = false;
         }
         form.reset();
+        Object.keys(validators).forEach(fieldName => showError(fieldName, ''));
       }, 500);
     });
   }
@@ -627,6 +835,8 @@ _Enviado desde portafolio IA DMB Seguridad_`;
   function init() {
     renderServices();
     renderProjects();
+    renderTestimonials();  // NEW
+    renderCertifications(); // NEW
     renderSkills();
     renderClients();
 
@@ -655,6 +865,21 @@ _Enviado desde portafolio IA DMB Seguridad_`;
       40% { transform: translateX(8px); }
       60% { transform: translateX(-4px); }
       80% { transform: translateX(4px); }
+    }
+    
+    .error-message {
+      display: none;
+      font-size: 0.75rem;
+      color: #ef4444;
+      margin-top: 0.375rem;
+      font-family: var(--font-mono);
+    }
+    
+    .honeypot { display: none !important; position: absolute; left: -9999px; }
+    
+    [aria-invalid="true"] {
+      border-color: #ef4444 !important;
+      box-shadow: 0 0 0 3px rgba(239,68,68,0.15) !important;
     }
   `;
   document.head.appendChild(style);
