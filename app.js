@@ -427,6 +427,13 @@
         </div>
       </article>
     `).join('');
+
+    // Track service card clicks
+    $$('.service-card').forEach(card => {
+      card.addEventListener('click', () => {
+        trackEvent('service_card_click', { service: card.dataset.service });
+      });
+    });
   }
 
   function renderProjects() {
@@ -468,9 +475,16 @@
         </div>
       </article>
     `).join('');
-  }
 
-  // NEW: Render Testimonials
+      // Track project card clicks
+      $$('.project-card').forEach(card => {
+        card.addEventListener('click', () => {
+          trackEvent('project_card_click', { project: card.dataset.project });
+        });
+      });
+    }
+
+    // NEW: Render Testimonials
   function renderTestimonials() {
     const grid = $('#testimonialsGrid');
     if (!grid) return;
@@ -624,12 +638,22 @@
   }
 
   // ========================================
-  // SCROLL DOWN INDICATOR
+  // PLAUSIBLE EVENT TRACKING HELPER
+  // ========================================
+  function trackEvent(eventName, props = {}) {
+    if (window.plausible) {
+      window.plausible(eventName, { props });
+    }
+  }
+
+  // ========================================
+  // HERO SCROLL DOWN INDICATOR
   // ========================================
   function initScrollDown() {
     const scrollDown = $('#scrollDown');
     const services = $('#servicios');
     scrollDown?.addEventListener('click', () => {
+      trackEvent('hero_scroll_down_click');
       if (services) {
         const navHeight = $('#nav')?.offsetHeight || 80;
         const targetPos = services.getBoundingClientRect().top + window.scrollY - navHeight;
@@ -757,6 +781,8 @@ ${message}
 ---
 _Enviado desde portafolio IA DMB Seguridad_`;
 
+      trackEvent('form_submit', { service: serviceLabels[service] || service });
+
       window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank');
 
       // Reset button
@@ -830,6 +856,47 @@ _Enviado desde portafolio IA DMB Seguridad_`;
   }
 
   // ========================================
+  // CLICK TRACKING FOR PLAUSIBLE
+  // ========================================
+  function initClickTracking() {
+    // WhatsApp float button
+    const whatsappFloat = $('.whatsapp-float');
+    whatsappFloat?.addEventListener('click', () => {
+      trackEvent('whatsapp_float_click');
+    });
+
+    // Hero CTA buttons
+    $$('.hero-cta, .btn-primary, .btn-secondary').forEach(btn => {
+      if (btn.closest('.hero')) {
+        btn.addEventListener('click', () => {
+          trackEvent('hero_cta_click', { cta_text: btn.textContent.trim().slice(0, 50) });
+        });
+      }
+    });
+
+    // Contact method links (WhatsApp, email, phone in contact section)
+    $$('.contact-method, .contact-item a').forEach(link => {
+      link.addEventListener('click', () => {
+        const href = link.getAttribute('href') || '';
+        if (href.startsWith('https://wa.me')) {
+          trackEvent('contact_whatsapp_click');
+        } else if (href.startsWith('mailto:')) {
+          trackEvent('contact_email_click');
+        } else if (href.startsWith('tel:')) {
+          trackEvent('contact_phone_click');
+        }
+      });
+    });
+
+    // Footer WhatsApp link
+    $$('footer a[href*="wa.me"]').forEach(link => {
+      link.addEventListener('click', () => {
+        trackEvent('footer_whatsapp_click');
+      });
+    });
+  }
+
+  // ========================================
   // INIT ALL
   // ========================================
   function init() {
@@ -848,6 +915,7 @@ _Enviado desde portafolio IA DMB Seguridad_`;
     initContactForm();
     initParallax();
     initPipelineAnimation();
+    initClickTracking(); // NEW: Plausible event tracking
   }
 
   if (document.readyState === 'loading') {
