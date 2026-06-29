@@ -2019,8 +2019,8 @@ body {
 }
 
 /* ========================================
-   WHATSAPP FLOAT
-   ======================================== */
+  WHATSAPP FLOAT
+  ======================================== */
 .whatsapp-float {
   position: fixed;
   bottom: var(--space-xl);
@@ -2043,13 +2043,9 @@ body {
 }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-.wa-bg {
-  position: absolute; inset: -4px;
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  border-radius: 50%;
-  filter: blur(12px);
-  opacity: 0.4;
-  z-index: -1;
+.wa-icon {
+  width: 28px; height: 28px;
+  flex-shrink: 0;
 }
 
 .whatsapp-tooltip {
