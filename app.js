@@ -196,15 +196,28 @@
     return i18n.getObject('projects.items') || [];
   }
 
-  // Get translated testimonials (for future use)
+  // Get translated testimonials
   function getTestimonials() {
-    // For now return static, could be moved to i18n later
-    return TESTIMONIALS;
+    const i18n = getI18n();
+    return i18n.getObject('testimonials.items') || [];
   }
 
-  // Get translated certifications (for future use)
+  // Get translated certifications
   function getCertifications() {
-    return CERTIFICATIONS;
+    const i18n = getI18n();
+    return i18n.getObject('certifications.items') || [];
+  }
+
+  // Get translated skills
+  function getSkills() {
+    const i18n = getI18n();
+    return i18n.getObject('skills') || { ai: [], hardware: [], networks: [] };
+  }
+
+  // Get translated clients
+  function getClients() {
+    const i18n = getI18n();
+    return i18n.getObject('clients.items') || [];
   }
 
   // ========================================
@@ -422,23 +435,25 @@
   }
 
   function renderSkills() {
+    const skills = getSkills();
     const aiEl = $('#aiSkills');
     const hwEl = $('#hwSkills');
     const netEl = $('#netSkills');
-    if (aiEl) aiEl.innerHTML = AI_SKILLS.map(s => `<span class="tech-chip">${s}</span>`).join('');
-    if (hwEl) hwEl.innerHTML = HW_SKILLS.map(s => `<span class="tech-chip">${s}</span>`).join('');
-    if (netEl) netEl.innerHTML = NET_SKILLS.map(s => `<span class="tech-chip">${s}</span>`).join('');
+    if (aiEl) aiEl.innerHTML = (skills.ai || []).map(s => `<span class="tech-chip">${s}</span>`).join('');
+    if (hwEl) hwEl.innerHTML = (skills.hardware || []).map(s => `<span class="tech-chip">${s}</span>`).join('');
+    if (netEl) netEl.innerHTML = (skills.networks || []).map(s => `<span class="tech-chip">${s}</span>`).join('');
   }
 
   function renderClients() {
+    const clients = getClients();
     const track = $('#clientsTrack');
     if (!track) return;
-    const allClients = [...CLIENTS, ...CLIENTS];
+    const allClients = [...clients, ...clients];
     track.innerHTML = allClients.map(c => `<span class="client-name">${c}</span>`).join('');
-    
+
     const heroTrack = $('#heroTrustLogos');
     if (heroTrack) {
-      heroTrack.innerHTML = CLIENTS.slice(0, 8).map(c => `<span class="client-name">${c}</span>`).join('');
+      heroTrack.innerHTML = clients.slice(0, 8).map(c => `<span class="client-name">${c}</span>`).join('');
     }
   }
 
@@ -772,6 +787,23 @@ ${footerText}`;
     // Initialize interactions
     initLanguageSwitcher();
     initNavigation();
+
+    // Re-render dynamic content on language change
+    const i18n = getI18n();
+    if (i18n) {
+      i18n.subscribe(() => {
+        renderServices();
+        renderProjects();
+        renderTestimonials();
+        renderCertifications();
+        renderSkills();
+        renderClients();
+        renderContactMethods();
+        renderFooterNav();
+        renderContactFormOptions();
+        renderAiCapabilities();
+      });
+    }
     initCounters();
     initScrollAnimations();
     initSmoothScroll();

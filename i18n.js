@@ -308,18 +308,175 @@
         ]
       },
 
-      // ===== TESTIMONIALS (if added later) =====
+      // ===== TESTIMONIALS =====
       testimonials: {
         tag: 'CONFIANZA',
         title: 'Lo que dicen <span class="gradient-text">mis clientes</span>',
-        subtitle: 'Resultados reales, personas reales. La mejor referencia es quien ya confió.'
+        subtitle: 'Resultados reales, personas reales. La mejor referencia es quien ya confió.',
+        items: [
+          {
+            id: 'test-1',
+            client: 'Ing. Carlos Mendoza',
+            role: 'Gerente de Operaciones',
+            company: 'Hielo Cristalizado Central',
+            avatar: 'CM',
+            quote: 'La implementación de IA en nuestras cámaras frigoríficas fue un antes y después. Cero falsos positivos a -30°C, algo que ningún otro proveedor logró. El gemelo digital nos permite simular emergencias sin detener producción.',
+            rating: 5,
+            project: 'hielo-central',
+            metric: '99.9% precisión en frío extremo'
+          },
+          {
+            id: 'test-2',
+            client: 'Dra. Patricia Reyes',
+            role: 'Vicerrectora Administrativa',
+            company: 'UTESA',
+            avatar: 'PR',
+            quote: 'Pasamos de seguridad reactiva a predictiva. El conteo de aforo en tiempo real y detección de anomalías nos da tranquilidad. La red auto-healing eliminó los cortes de internet durante clases virtuales. Un partner técnico real, no solo un instalador.',
+            rating: 5,
+            project: 'utesa',
+            metric: '73% reducción incidentes'
+          },
+          {
+            id: 'test-3',
+            client: 'Roberto Vázquez',
+            role: 'Director de Logística',
+            company: 'Súper Truck Logistics',
+            avatar: 'RV',
+            quote: 'Los camiones ya no se detienen. ANPR a 60 km/h, barreras se abren solas, todo en una app. Cero falsas alarmas por fauna en 2km de perímetro. Conectaron 3 sedes con SD-WAN y failover automático. ROI inmediato en eficiencia operativa.',
+            rating: 5,
+            project: 'super-truck',
+            metric: '200 camiones/día sin parar'
+          },
+          {
+            id: 'test-4',
+            client: 'Jennifer Cabrera',
+            role: 'Gerente General',
+            company: 'JC Multiservice',
+            avatar: 'JC',
+            quote: 'Buscábamos algo simple y moderno. Entregaron instalación invisible, cableado certificado, facial para empleados y alertas a WhatsApp. En 8 meses recuperamos la inversión previniendo robos internos. Soporte 24/7 real, no bot.',
+            rating: 5,
+            project: 'jc-multiservice',
+            metric: 'ROI 8 meses'
+          },
+          {
+            id: 'test-5',
+            client: 'Ing. Miguel Rodríguez',
+            role: 'Jefe de Mantenimiento',
+            company: 'Roda Caribe',
+            avatar: 'MR',
+            quote: 'Primera fábrica en La Vega con detección EPP por IA. Cumplimiento de seguridad subió al 98%. La red OT/IT segregada (Modelo Purdue) pasó auditoría internacional. Alarma perimetral IA distingue personal de fauna. Profesionalismo total.',
+            rating: 5,
+            project: 'roda-caribe',
+            metric: '98% cumplimiento EPP'
+          },
+          {
+            id: 'test-6',
+            client: 'Carlos Núñez',
+            role: 'Propietario',
+            company: 'Cecomsa Finca',
+            avatar: 'CN',
+            quote: 'Me dijeron que era imposible: seguridad IA profesional sin electricidad ni internet en medio del campo. Lo lograron: 100% solar, IA edge offline, enlace 5km. 72h autonomía sin sol. Monitoreo desde mi casa. Increíble.',
+            rating: 5,
+            project: 'cecomsa',
+            metric: '100% off-grid funcional'
+          }
+        ]
       },
 
-      // ===== CERTIFICATIONS (if added later) =====
+      // ===== CERTIFICATIONS =====
       certifications: {
         tag: 'CREDENCIALES',
         title: 'Certificaciones y <span class="gradient-text">competencias técnicas</span>',
-        subtitle: 'Formación continua y validación de fabricantes líderes. La tecnología evoluciona, yo también.'
+        subtitle: 'Formación continua y validación de fabricantes líderes. La tecnología evoluciona, yo también.',
+        items: [
+          { id: 'cert-1', name: 'NVIDIA Jetson AI Specialist', issuer: 'NVIDIA', year: 2024, icon: '🟢', category: 'IA / Edge', verified: true },
+          { id: 'cert-2', name: 'TensorRT Optimization Certified', issuer: 'NVIDIA', year: 2024, icon: '🟢', category: 'IA / Edge', verified: true },
+          { id: 'cert-3', name: 'YOLOv8/v9/v10 Advanced Training', issuer: 'Ultralytics', year: 2024, icon: '🔵', category: 'IA / Edge', verified: true },
+          { id: 'cert-4', name: 'SAM 2.0 Segmentation Expert', issuer: 'Meta AI', year: 2024, icon: '🔵', category: 'IA / Edge', verified: true },
+          { id: 'cert-5', name: 'Hikvision AI Partner Certified', issuer: 'Hikvision', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+          { id: 'cert-6', name: 'Dahua Technology Solution Expert', issuer: 'Dahua', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+          { id: 'cert-7', name: 'Axis Communications Certified Professional', issuer: 'Axis', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+          { id: 'cert-8', name: 'ZKTeco Biometric Solutions Certified', issuer: 'ZKTeco', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+          { id: 'cert-9', name: 'Fluke DSX-5000/8000 Certification', issuer: 'Fluke Networks', year: 2022, icon: '🟣', category: 'Redes / Infra', verified: true },
+          { id: 'cert-10', name: 'MikroTik MTCNA / MTCRE / MTCTCE', issuer: 'MikroTik', year: 2022, icon: '🟣', category: 'Redes / Infra', verified: true },
+          { id: 'cert-11', name: 'Ubiquiti Enterprise Wireless Admin', issuer: 'Ubiquiti', year: 2022, icon: '🟣', category: 'Redes / Infra', verified: true },
+          { id: 'cert-12', name: 'Cisco CCNA Routing & Switching', issuer: 'Cisco', year: 2021, icon: '🟣', category: 'Redes / Infra', verified: true },
+          { id: 'cert-13', name: 'BICSI Installer 2 Copper/Fiber', issuer: 'BICSI', year: 2021, icon: '🟣', category: 'Redes / Infra', verified: true },
+          { id: 'cert-14', name: 'Paradox / DSC / Ajax Alarm Certified', issuer: 'Multi-brand', year: 2021, icon: '🔴', category: 'Alarmas', verified: true },
+          { id: 'cert-15', name: 'MLflow / Kubeflow MLOps Practitioner', issuer: 'Linux Foundation', year: 2024, icon: '🟢', category: 'IA / Edge', verified: true },
+          { id: 'cert-16', name: 'Prometheus / Grafana Observability', issuer: 'CNCF', year: 2023, icon: '🟣', category: 'Redes / Infra', verified: true }
+        ]
+      },
+
+      // ===== SKILLS =====
+      skills: {
+        tag: 'STACK',
+        title: 'Stack técnico <span class="gradient-text">de profundidad</span>',
+        subtitle: 'No uso herramientas, las domino. Cada chip, cada línea de código, cada metro de fibra.',
+        ai: [
+          'YOLOv8 / YOLOv9 / YOLOv10',
+          'RT-DETR / DETR',
+          'SAM 2.0 (Segment Anything)',
+          'TensorRT / ONNX Runtime',
+          'NVIDIA Jetson (Orin / AGX / Xavier / Nano)',
+          'Edge TPU / Google Coral',
+          'OpenVINO / OpenCV DNN',
+          'MLflow / Kubeflow / Weights & Biases',
+          'Python / C++ / CUDA / Triton Inference Server',
+          'Computer Vision: Detection / Segmentation / Pose / Tracking',
+          'Face Recognition: ArcFace / MobileFaceNet / AdaFace',
+          'Liveness Detection (Anti-Spoofing) ISO 30107',
+          'ANPR/LPR: OpenALPR / Plate Recognizer / Custom',
+          'Time Series: LSTM / Transformer / Isolation Forest',
+          'MLOps: CI/CD modelos / Drift Detection / A/B Testing'
+        ],
+        hardware: [
+          'Hikvision / Dahua / Uniview / Axis / Hanwha',
+          'NVR / XVR / DVR 4K/8K + IA',
+          'Cámaras: Bullet / Dome / PTZ / Térmica / Fisheye / Multi-sensor',
+          'Control: ZKTeco / Hikvision / Anviz / Suprema / HID / Axis',
+          'Biometría: Facial / Palma / Huella / Iris / Vena',
+          'RFID: 125kHz / 13.56MHz (Mifare/DESFire) / UHF 860-960MHz / NFC',
+          'Cerraduras: Magnéticas / Eléctricas / Motorizadas / Antipánico',
+          'Torniquetes / Barreras vehiculares / Portones',
+          'Alarmas: Paradox / DSC / Ajax / Hikvision / Texecom / Risco',
+          'Sensores: PIR / Dual / Magnéticos / Rotura vidrio / Barreras IR / Sísmicos',
+          'Sirena: Interior / Exterior / Estrobo / Voz / GSM/4G/IP',
+          'Fibra: Fusionadora Fujikura / OTDR / Medidor potencia / Certificación',
+          'Cobre: Fluke DSX-5000 / DSX-8000 / Certificación Cat6a/Cat7/Cat8',
+          'Switches: Ubiquiti / MikroTik / TP-Link Omada / Cisco / Aruba / Ruijie',
+          'PoE: 802.3af/at/bt (90W) / PoE++ / Pasivo / Watchdog',
+          'Racks: 19" 6U-42U / Patch panels / Bandejas / Organizados / UPS Online/Line-Interactive'
+        ],
+        networks: [
+          'Diseño red: Core / Distribución / Acceso / Colapso',
+          'VLAN / QinQ / VXLAN / EVPN / VPLS / MPLS / SRv6',
+          'Routing: OSPF / IS-IS / BGP / RIP / EIGRP / FRR / Bird',
+          'QoS: DiffServ / IntServ / HQoS / PFIFO_FAST / HTB / CAKE / FQ-CoDel',
+          'Seguridad: ACL / uRPF / BGP FlowSpec / DDoS Mitigation / NDR / XDP / eBPF',
+          'VPN: WireGuard / OpenVPN / IPsec / Tailscale / ZeroTier / SD-WAN',
+          'SDN: OpenFlow / P4 / ONOS / OpenDaylight / FRRouting',
+          'Monitoring: Prometheus / VictoriaMetrics / Thanos / Grafana / NetBox / LibreNMS / Zabbix',
+          'Logging: Loki / Elasticsearch / Graylog / Syslog-ng / Rsyslog',
+          'Tracing: Jaeger / Zipkin / Tempo / OpenTelemetry',
+          'Automation: Ansible / Terraform / Nornir / Netmiko / NAPALM / gNMI / NETCONF / YANG',
+          'GitOps: ArgoCD / Flux / Helm / Kustomize / K3s / K8s / Talos',
+          'Linux: Debian / Ubuntu / Alpine / NixOS / Proxmox / LXC / systemd / nftables / WireGuard',
+          'Containers: Docker / Podman / Buildah / Skopeo / Cosign / Syft / Grype / Trivy',
+          'CI/CD: GitHub Actions / GitLab CI / Drone / Woodpecker / Tekton / Argo Workflows',
+          'IaC: Terraform / OpenTofu / Pulumi / Crossplane / Ansible / SaltStack'
+        ]
+      },
+
+      // ===== CLIENTS =====
+      clients: {
+        items: [
+          'Hielo Central', 'UTESA', 'Súper Truck', 'JC Multiservice',
+          'Roda Caribe', 'Rodatari', 'Cecomsa Finca',
+          'Adrickson Comercio', 'Guariones', 'María Elsa',
+          'Ernan', 'Prodacon', 'Radacaribe',
+          'La Estación Sober', 'Escuela Juan López', 'Naro'
+        ]
       },
 
       // ===== CONTACT SECTION =====
@@ -753,14 +910,171 @@
       testimonials: {
         tag: 'TRUST',
         title: 'What <span class="gradient-text">My Clients Say</span>',
-        subtitle: 'Real results, real people. The best reference is who already trusted.'
+        subtitle: 'Real results, real people. The best reference is who already trusted.',
+        items: [
+          {
+            id: 'test-1',
+            client: 'Eng. Carlos Mendoza',
+            role: 'Operations Manager',
+            company: 'Hielo Cristalizado Central',
+            avatar: 'CM',
+            quote: 'AI implementation in our freezer cameras was a before-and-after. Zero false positives at -30°C, something no other provider achieved. The digital twin lets us simulate emergencies without stopping production.',
+            rating: 5,
+            project: 'hielo-central',
+            metric: '99.9% precision in extreme cold'
+          },
+          {
+            id: 'test-2',
+            client: 'Dr. Patricia Reyes',
+            role: 'Administrative Vice-Rector',
+            company: 'UTESA',
+            avatar: 'PR',
+            quote: 'We went from reactive to predictive security. Real-time occupancy counting and anomaly detection give us peace of mind. The self-healing network eliminated internet outages during virtual classes. A real technical partner, not just an installer.',
+            rating: 5,
+            project: 'utesa',
+            metric: '73% incident reduction'
+          },
+          {
+            id: 'test-3',
+            client: 'Roberto Vázquez',
+            role: 'Logistics Director',
+            company: 'Súper Truck Logistics',
+            avatar: 'RV',
+            quote: 'Trucks no longer stop. ANPR at 60 km/h, barriers open automatically, everything in one app. Zero false alarms from wildlife on 2km perimeter. Connected 3 sites with SD-WAN and automatic failover. Immediate ROI in operational efficiency.',
+            rating: 5,
+            project: 'super-truck',
+            metric: '200 trucks/day non-stop'
+          },
+          {
+            id: 'test-4',
+            client: 'Jennifer Cabrera',
+            role: 'General Manager',
+            company: 'JC Multiservice',
+            avatar: 'JC',
+            quote: 'We wanted something simple and modern. They delivered invisible installation, certified cabling, facial for employees, and WhatsApp alerts. In 8 months we recovered the investment by preventing internal theft. Real 24/7 support, not a bot.',
+            rating: 5,
+            project: 'jc-multiservice',
+            metric: 'ROI 8 months'
+          },
+          {
+            id: 'test-5',
+            client: 'Eng. Miguel Rodríguez',
+            role: 'Maintenance Chief',
+            company: 'Roda Caribe',
+            avatar: 'MR',
+            quote: 'First factory in La Vega with AI PPE detection. Safety compliance rose to 98%. The OT/IT segregated network (Purdue Model) passed international audit. Perimeter AI alarm distinguishes personnel from wildlife. Total professionalism.',
+            rating: 5,
+            project: 'roda-caribe',
+            metric: '98% PPE compliance'
+          },
+          {
+            id: 'test-6',
+            client: 'Carlos Núñez',
+            role: 'Owner',
+            company: 'Cecomsa Finca',
+            avatar: 'CN',
+            quote: 'They told me it was impossible: professional AI security without electricity or internet in the middle of nowhere. They did it: 100% solar, edge AI offline, 5km link. 72h autonomy without sun. Monitoring from my house. Incredible.',
+            rating: 5,
+            project: 'cecomsa',
+            metric: '100% off-grid functional'
+          }
+        ]
       },
 
       // ===== CERTIFICATIONS =====
       certifications: {
         tag: 'CREDENTIALS',
         title: 'Certifications & <span class="gradient-text">Technical Competencies</span>',
-        subtitle: 'Continuous training and validation by leading vendors. Technology evolves, so do I.'
+        subtitle: 'Continuous training and validation by leading vendors. Technology evolves, so do I.',
+        items: [
+          { id: 'cert-1', name: 'NVIDIA Jetson AI Specialist', issuer: 'NVIDIA', year: 2024, icon: '🟢', category: 'AI / Edge', verified: true },
+          { id: 'cert-2', name: 'TensorRT Optimization Certified', issuer: 'NVIDIA', year: 2024, icon: '🟢', category: 'AI / Edge', verified: true },
+          { id: 'cert-3', name: 'YOLOv8/v9/v10 Advanced Training', issuer: 'Ultralytics', year: 2024, icon: '🔵', category: 'AI / Edge', verified: true },
+          { id: 'cert-4', name: 'SAM 2.0 Segmentation Expert', issuer: 'Meta AI', year: 2024, icon: '🔵', category: 'AI / Edge', verified: true },
+          { id: 'cert-5', name: 'Hikvision AI Partner Certified', issuer: 'Hikvision', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+          { id: 'cert-6', name: 'Dahua Technology Solution Expert', issuer: 'Dahua', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+          { id: 'cert-7', name: 'Axis Communications Certified Professional', issuer: 'Axis', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+          { id: 'cert-8', name: 'ZKTeco Biometric Solutions Certified', issuer: 'ZKTeco', year: 2023, icon: '🟠', category: 'Hardware', verified: true },
+          { id: 'cert-9', name: 'Fluke DSX-5000/8000 Certification', issuer: 'Fluke Networks', year: 2022, icon: '🟣', category: 'Networks / Infra', verified: true },
+          { id: 'cert-10', name: 'MikroTik MTCNA / MTCRE / MTCTCE', issuer: 'MikroTik', year: 2022, icon: '🟣', category: 'Networks / Infra', verified: true },
+          { id: 'cert-11', name: 'Ubiquiti Enterprise Wireless Admin', issuer: 'Ubiquiti', year: 2022, icon: '🟣', category: 'Networks / Infra', verified: true },
+          { id: 'cert-12', name: 'Cisco CCNA Routing & Switching', issuer: 'Cisco', year: 2021, icon: '🟣', category: 'Networks / Infra', verified: true },
+          { id: 'cert-13', name: 'BICSI Installer 2 Copper/Fiber', issuer: 'BICSI', year: 2021, icon: '🟣', category: 'Networks / Infra', verified: true },
+          { id: 'cert-14', name: 'Paradox / DSC / Ajax Alarm Certified', issuer: 'Multi-brand', year: 2021, icon: '🔴', category: 'Alarms', verified: true },
+          { id: 'cert-15', name: 'MLflow / Kubeflow MLOps Practitioner', issuer: 'Linux Foundation', year: 2024, icon: '🟢', category: 'AI / Edge', verified: true },
+          { id: 'cert-16', name: 'Prometheus / Grafana Observability', issuer: 'CNCF', year: 2023, icon: '🟣', category: 'Networks / Infra', verified: true }
+        ]
+      },
+
+      // ===== SKILLS =====
+      skills: {
+        tag: 'STACK',
+        title: 'Deep <span class="gradient-text">Technical Stack</span>',
+        subtitle: "I don't just use tools, I master them. Every chip, every line of code, every meter of fiber.",
+        ai: [
+          'YOLOv8 / YOLOv9 / YOLOv10',
+          'RT-DETR / DETR',
+          'SAM 2.0 (Segment Anything)',
+          'TensorRT / ONNX Runtime',
+          'NVIDIA Jetson (Orin / AGX / Xavier / Nano)',
+          'Edge TPU / Google Coral',
+          'OpenVINO / OpenCV DNN',
+          'MLflow / Kubeflow / Weights & Biases',
+          'Python / C++ / CUDA / Triton Inference Server',
+          'Computer Vision: Detection / Segmentation / Pose / Tracking',
+          'Face Recognition: ArcFace / MobileFaceNet / AdaFace',
+          'Liveness Detection (Anti-Spoofing) ISO 30107',
+          'ANPR/LPR: OpenALPR / Plate Recognizer / Custom',
+          'Time Series: LSTM / Transformer / Isolation Forest',
+          'MLOps: Model CI/CD / Drift Detection / A/B Testing'
+        ],
+        hardware: [
+          'Hikvision / Dahua / Uniview / Axis / Hanwha',
+          'NVR / XVR / DVR 4K/8K + AI',
+          'Cameras: Bullet / Dome / PTZ / Thermal / Fisheye / Multi-sensor',
+          'Access Control: ZKTeco / Hikvision / Anviz / Suprema / HID / Axis',
+          'Biometrics: Facial / Palm / Fingerprint / Iris / Vein',
+          'RFID: 125kHz / 13.56MHz (Mifare/DESFire) / UHF 860-960MHz / NFC',
+          'Locks: Magnetic / Electric / Motorized / Anti-panic',
+          'Turnstiles / Vehicle Barriers / Gates',
+          'Alarms: Paradox / DSC / Ajax / Hikvision / Texecom / Risco',
+          'Sensors: PIR / Dual / Magnetic / Glass Break / IR Barriers / Seismic',
+          'Siren: Indoor / Outdoor / Strobe / Voice / GSM/4G/IP',
+          'Fiber: Fujikura Fusion Splicer / OTDR / Power Meter / Certification',
+          'Copper: Fluke DSX-5000 / DSX-8000 / Cat6a/Cat7/Cat8 Certification',
+          'Switches: Ubiquiti / MikroTik / TP-Link Omada / Cisco / Aruba / Ruijie',
+          'PoE: 802.3af/at/bt (90W) / PoE++ / Passive / Watchdog',
+          'Racks: 19" 6U-42U / Patch Panels / Trays / Organized / UPS Online/Line-Interactive'
+        ],
+        networks: [
+          'Network Design: Core / Distribution / Access / Collapsed',
+          'VLAN / QinQ / VXLAN / EVPN / VPLS / MPLS / SRv6',
+          'Routing: OSPF / IS-IS / BGP / RIP / EIGRP / FRR / Bird',
+          'QoS: DiffServ / IntServ / HQoS / PFIFO_FAST / HTB / CAKE / FQ-CoDel',
+          'Security: ACL / uRPF / BGP FlowSpec / DDoS Mitigation / NDR / XDP / eBPF',
+          'VPN: WireGuard / OpenVPN / IPsec / Tailscale / ZeroTier / SD-WAN',
+          'SDN: OpenFlow / P4 / ONOS / OpenDaylight / FRRouting',
+          'Monitoring: Prometheus / VictoriaMetrics / Thanos / Grafana / NetBox / LibreNMS / Zabbix',
+          'Logging: Loki / Elasticsearch / Graylog / Syslog-ng / Rsyslog',
+          'Tracing: Jaeger / Zipkin / Tempo / OpenTelemetry',
+          'Automation: Ansible / Terraform / Nornir / Netmiko / NAPALM / gNMI / NETCONF / YANG',
+          'GitOps: ArgoCD / Flux / Helm / Kustomize / K3s / K8s / Talos',
+          'Linux: Debian / Ubuntu / Alpine / NixOS / Proxmox / LXC / systemd / nftables / WireGuard',
+          'Containers: Docker / Podman / Buildah / Skopeo / Cosign / Syft / Grype / Trivy',
+          'CI/CD: GitHub Actions / GitLab CI / Drone / Woodpecker / Tekton / Argo Workflows',
+          'IaC: Terraform / OpenTofu / Pulumi / Crossplane / Ansible / SaltStack'
+        ]
+      },
+
+      // ===== CLIENTS =====
+      clients: {
+        items: [
+          'Hielo Central', 'UTESA', 'Súper Truck', 'JC Multiservice',
+          'Roda Caribe', 'Rodatari', 'Cecomsa Finca',
+          'Adrickson Comercio', 'Guariones', 'María Elsa',
+          'Ernan', 'Prodacon', 'Radacaribe',
+          'La Estación Sober', 'Escuela Juan López', 'Naro'
+        ]
       },
 
       // ===== CONTACT SECTION =====
