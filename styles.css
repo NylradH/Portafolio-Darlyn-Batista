@@ -1850,21 +1850,17 @@ body {
 }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 
-.wa-bg {
-  position: absolute; inset: -4px;
-  background: linear-gradient(135deg, #25D366, #128C7E);
-  border-radius: 50%;
-  filter: blur(12px);
-  opacity: 0.4;
-  z-index: -1;
+.wa-icon {
+  width: 28px; height: 28px;
+  flex-shrink: 0;
 }
 
 .whatsapp-tooltip {
   position: absolute;
   right: 80px; top: 50%;
   transform: translateY(-50%);
-  background: var(--bg-card);
-  border: 1px solid var(--border-primary);
+  background: var(--space-800);
+  border: 1px solid var(--glass-border);
   padding: 0.5rem 1rem;
   border-radius: var(--radius-sm);
   font-family: var(--font-mono);
